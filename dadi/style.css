@@ -46,7 +46,7 @@ button {
     margin: 20px;
 }
 
-#userNumber, #userCpu {
+#userNumber, #userCpu, #scoreCpu, #scoreUser {
     font-size: 1.5rem;
     font-weight: bold;
 }

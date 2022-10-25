@@ -1,4 +1,6 @@
 const btnStart = document.getElementById("start");
+const winnerNumbersCpu = [];
+const winnerNumbersUser = [];
 
 btnStart.addEventListener('click', function(){ 
  
@@ -8,6 +10,8 @@ btnStart.addEventListener('click', function(){
 
     const cpuDice = Math.floor(Math.random() * 6 + 1);
     console.log("dado cpu " + cpuDice);
+
+    
 
     // trascrivo il risultato dell'estrazione sulla tabella
     document.getElementById("userNumber").innerHTML = userDice; 
@@ -45,13 +49,21 @@ btnStart.addEventListener('click', function(){
         document.getElementById("cpuimg").src="img/6.jpg"      
     }    
 
-
     if ( userDice > cpuDice ) {
         document.getElementById("userWin").innerHTML = "HAI PIU' FORTUNA DI UNA MACCHINA! COMPLIMENTI!"
+        winnerNumbersUser.push(userDice);
+        document.getElementById("scoreUser").innerHTML = winnerNumbersUser.length;
     } else if ( userDice < cpuDice) {
         document.getElementById("userWin").innerHTML = "UNA CPU HA PIU' FORTUNA DI TE, MI DISPIACE!"
+        winnerNumbersCpu.push(cpuDice);
+        document.getElementById("scoreCpu").innerHTML = winnerNumbersCpu.length;
     } else {
         document.getElementById("userWin").innerHTML = "PARI! RITENTA!"
     }
+
+    
+    console.log("i numeri vincenti della CPU sono " + winnerNumbersCpu);
+
+    console.log("i numeri vincenti dall'utente sono " + winnerNumbersUser);
 });
 
