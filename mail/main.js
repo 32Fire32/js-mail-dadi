@@ -11,19 +11,34 @@ btnSubmit.addEventListener('click', function(){
     const emailUser = document.getElementById("email").value;
     console.log("l'email inserita è " + emailUser);
 
+    let found = false;
+
     // confronto l'email inserita con quelle presenti nell'array
 for (let i = 0; i < emailList.length; i++) {
-    const element = emailList[i];
-    console.log(element);
-    if (element === emailUser) {
-        alert("la tua e-mail è presente nel nostro database");
-        break;
-    } else {
-        alert("la tua e-mail non è presente nel database");
-        break;
+    if (emailList[i] === emailUser) {
+        found = true;
     }
 }
+ 
+ if (found){
+    alert("la tua e-mail è presente nel nostro database");
+ } else {
+    alert("la tua e-mail non è presente nel database");
+ }
 })
+
+// for (let i = 0; i < emailList.length; i++) {
+//     const element = emailList[i];
+//     console.log(element);
+//     if (element === emailUser) {
+//         alert("la tua e-mail è presente nel nostro database");
+//         break;
+//     } else {
+//         alert("la tua e-mail non è presente nel database");
+//         break;
+//     }
+// }
+// })
 
 
 
